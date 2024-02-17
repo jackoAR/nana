@@ -1,5 +1,10 @@
 package com.uisrael.nana.model;
 
-public class Nana {
+import lombok.Data;
 
+@Data
+public class Nana {
+	
+	private String idNana;
+	private String nombre;
 }
