@@ -7,4 +7,5 @@ public class Nana {
 	
 	private String idNana;
 	private String nombre;
+	private String apellido;
 }
