@@ -6,39 +6,39 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.uisrael.nana.model.Nana;
-import com.uisrael.nana.repository.INanaRepository;
-import com.uisrael.nana.service.INanaService;
+import com.uisrael.nana.model.Rol;
+import com.uisrael.nana.repository.IRolRepository;
+import com.uisrael.nana.service.IRolService;
 
 @Service
-public class NanaServiceImpl implements INanaService{
+public class RolServiceImpl implements IRolService{
 	
 	@Autowired
-	private INanaRepository repo;
+	private IRolRepository repo;
 	
 	@Override
-	public List<Nana> listarNana() {
+	public List<Rol> listarRol() {
 		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
 
 	@Override
-	public boolean insertarNana(Nana nuevo) {
+	public boolean insertarRol(Rol nuevo) {
 		// TODO Auto-generated method stub
-		return repo.save(nuevo) != null;
+		return repo.save(nuevo)!=null;
 	}
 
 	@Override
-	public void eliminarNana(String id) {
+	public void eliminarRol(String id) {
 		// TODO Auto-generated method stub
 		repo.deleteById(id);
 	}
 
 	@Override
-	public Nana actualizarNana(String id, Nana updated) {
+	public Rol actualizarRol(String id, Rol updated) {
 		// TODO Auto-generated method stub
 		if (repo.existsById(id)) {
-			updated.setIdNana(id);
+			updated.setIdRol(id);
 			return repo.save(updated);
 			
 		}else {
@@ -47,7 +47,7 @@ public class NanaServiceImpl implements INanaService{
 	}
 
 	@Override
-	public Optional<Nana> buscarPorId(String id) {
+	public Optional<Rol> buscarPorId(String id) {
 		// TODO Auto-generated method stub
 		try {
 			return repo.findById(id);
