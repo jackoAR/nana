@@ -19,7 +19,8 @@ class NanaApplicationTests {
 		Nana nueva = new Nana();
 		nueva.setNombre("Maria");
 		nueva.setApellido("Torres");
-		nueva.setEdad(21);
+		nueva.setEdad(21);	
+		
 		
 		srv.insertarNana(nueva);
 	}
