@@ -1,7 +1,6 @@
 package com.uisrael.nana.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,11 +10,11 @@ import com.uisrael.nana.repository.INanaRepository;
 import com.uisrael.nana.service.INanaService;
 
 @Service
-public class NanaServiceImpl implements INanaService{
-	
+public class NanaServiceImpl implements INanaService {
+
 	@Autowired
 	private INanaRepository repo;
-	
+
 	@Override
 	public List<Nana> listarNana() {
 		// TODO Auto-generated method stub
@@ -35,27 +34,20 @@ public class NanaServiceImpl implements INanaService{
 	}
 
 	@Override
-	public Nana actualizarNana(String id, Nana nanaUpdate) {
+	public Nana actualizarNana(String id, Nana updated) {
 		// TODO Auto-generated method stub
 		if (repo.existsById(id)) {
-			nanaUpdate.setIdNana(id);
-			return repo.save(nanaUpdate);
-			
-		}else {
+			updated.setIdNana(id);
+			return repo.save(updated);
+
+		} else {
 			return null;
 		}
 	}
 
 	@Override
-	public Optional<Nana> buscarPorId(String id) {
+	public Nana buscarPorId(String id) {
 		// TODO Auto-generated method stub
-		try {
-			return repo.findById(id);
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-			return Optional.empty();
-		}
+		return repo.findById(id).get();
 	}
-
 }
