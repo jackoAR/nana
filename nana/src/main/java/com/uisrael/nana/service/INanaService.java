@@ -10,6 +10,6 @@ public interface INanaService {
 	public List<Nana> listarNana();
 	public boolean insertarNana(Nana nuevo);
 	public void eliminarNana(String id);	
-	public Nana actualizarNana(String id, Nana nanaUpdate);
+	public Nana actualizarNana(String id, Nana updated);
 	public Optional<Nana> buscarPorId(String id);
 }

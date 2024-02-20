@@ -35,11 +35,11 @@ public class RolServiceImpl implements IRolService{
 	}
 
 	@Override
-	public Rol actualizarRol(String id, Rol nanaUpdate) {
+	public Rol actualizarRol(String id, Rol updated) {
 		// TODO Auto-generated method stub
 		if (repo.existsById(id)) {
-			nanaUpdate.setIdRol(id);
-			return repo.save(nanaUpdate);
+			updated.setIdRol(id);
+			return repo.save(updated);
 			
 		}else {
 			return null;

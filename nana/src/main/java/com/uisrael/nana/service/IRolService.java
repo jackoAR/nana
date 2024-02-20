@@ -10,6 +10,6 @@ public interface IRolService {
 	public List<Rol> listarRol();
 	public boolean insertarRol(Rol nuevo);
 	public void eliminarRol(String id);	
-	public Rol actualizarRol(String id, Rol nanaUpdate);
+	public Rol actualizarRol(String id, Rol updated);
 	public Optional<Rol> buscarPorId(String id);
 }
